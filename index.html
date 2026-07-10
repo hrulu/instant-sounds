@@ -6,13 +6,8 @@
     <title>Instant Sounds</title>
     
     <script>
-        // 1. 🌟 Zde zadej přesnou adresu, kde ti soundboard běží u strejdy (včetně lomítka na konci!)
-        const targetUrl = "https://www.relaxhosting.cz/avening/soundboard2/";
-        
-        // 2. JavaScript vezme to číslo za otazníkem (např. ?223)
+        const targetUrl = "https://www.relaxhosting.cz/avening/soundboard/";
         const urlParams = window.location.search;
-        
-        // 3. Spojí to dohromady a bleskově přesměruje (vznikne https://www.relaxhosting.cz/avening/soundboard2/?223)
         window.location.replace(targetUrl + urlParams);
     </script>
 </head>
