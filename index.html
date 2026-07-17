@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instant Sounds</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zvukify</title>
+  <script>
+    // 🎯 TADY VŽDY JEN PŘEPIŠ ČÍSLO ZVUKU PODLE SITUACE:
+    const targetSound = "166"; 
+
+    const targetUrl = "https://www.zvukify.cz/?" + targetSound;
+    const urlParams = window.location.search;
     
-    <script>
-        const targetUrl = "https://www.zvukify.cz/?166";
-        const urlParams = window.location.search;
-        window.location.replace(targetUrl + urlParams);
-    </script>
+    // Okamžité přesměrování bez uložení do historie
+    window.location.replace(targetUrl + (urlParams ? "&" + urlParams.substring(1) : ""));
+  </script>
 </head>
-<body>
-    <p style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
-        Načítám Zvukify... Pokud se stránka nepřesměruje sama, 
-        <a id="fallback-link" href="https://www.zvukify.cz/?166">klikněte zde</a>.
-    </p>
-    <script>
-        document.getElementById("fallback-link").href = targetUrl + urlParams;
-    </script>
+<body style="background-color: #121212; color: #fff; font-family: sans-serif; text-align: center; padding-top: 100px;">
+  <p>Přesměrovávám na Zvukify...</p>
+  <p style="font-size: 14px; opacity: 0.6;">
+    Pokud přesměrování neproběhne, <a id="link" href="#" style="color: #2FC480; text-decoration: none; font-weight: bold;">klikni sem</a>.
+  </p>
+  <script>
+    // Pojistka pro fallback odkaz
+    document.getElementById("link").href = targetUrl + urlParams;
+  </script>
 </body>
 </html>
