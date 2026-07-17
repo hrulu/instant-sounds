@@ -6,7 +6,7 @@
     <title>Instant Sounds</title>
     
     <script>
-        const targetUrl = "https://www.relaxhosting.cz/avening/zvukify/";
+        const targetUrl = "https://www.zvukify.cz/?166";
         const urlParams = window.location.search;
         window.location.replace(targetUrl + urlParams);
     </script>
@@ -14,7 +14,7 @@
 <body>
     <p style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
         Načítám Zvukify... Pokud se stránka nepřesměruje sama, 
-        <a id="fallback-link" href="https://www.relaxhosting.cz/avening/zvukify/">klikněte zde</a>.
+        <a id="fallback-link" href="https://www.zvukify.cz/?166">klikněte zde</a>.
     </p>
     <script>
         document.getElementById("fallback-link").href = targetUrl + urlParams;
